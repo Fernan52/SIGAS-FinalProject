@@ -9,3 +9,4 @@ EXPOSE 27017
 
 # Comando por defecto para iniciar MongoDB
 CMD ["mongod"]
+#Comando 
