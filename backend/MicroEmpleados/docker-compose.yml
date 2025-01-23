@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  empleados:
+    build:
+      context: .  # Usar el Dockerfile del directorio actual
+    container_name: empleados_service
+    ports:
+      - "8080:8080"  # Mapea el puerto 8080 del contenedor al 8080 en tu máquina host
+    volumes:
+      - ./target:/app  # (Si usas Gradle, usa build/libs en lugar de target)
+    environment:
+      SPRING_PROFILES_ACTIVE: "prod"  # Si usas Spring, puedes configurar perfiles aquí

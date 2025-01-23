@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  # Servicio para MongoDB
+  mongodb:
+    build:
+      context: .  # Directorio donde está el Dockerfile de MongoDB
+    container_name: mongodb_inventarios
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/mongodb:/data/db  # Persistencia de datos
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+      MONGO_INITDB_DATABASE: inventarios
+

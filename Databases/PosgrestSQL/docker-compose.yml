@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  postgres:
+    build:
+      context: .  # Directorio donde está el Dockerfile de PostgreSQL
+    container_name: postgres_ventas
+    ports:
+      - "5432:5432"  # Exponer el puerto 5432 de PostgreSQL
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data  # Persistencia de datos
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: ventas
